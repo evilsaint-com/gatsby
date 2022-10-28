@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_online_portfolio=self.webpackChunkmy_online_portfolio||[]).push([[501],{5791:function(e,n,t){t.r(n);var l=t(7294);n.default=function(){return l.createElement("main",null,l.createElement("h1",null,"Contact"),l.createElement("p",null,"Contact Content Here"))}}}]);
+//# sourceMappingURL=component---src-pages-contact-js-434351428e2bbc9001be.js.map

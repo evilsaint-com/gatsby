@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_online_portfolio=self.webpackChunkmy_online_portfolio||[]).push([[690],{7954:function(e,n,l){l.r(n);var t=l(7294);n.default=function(){return t.createElement("main",null,t.createElement("h1",null,"Courses"),t.createElement("p",null,"Course Content Here"))}}}]);
+//# sourceMappingURL=component---src-pages-courses-js-da4391b3cf22d71b018b.js.map
