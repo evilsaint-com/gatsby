@@ -20,8 +20,8 @@ const BlogPage = ({data}) => {
 
         return (
           <div className="card" key={post.fields.slug}>
-            <Link className="card-link" to={post.fields.slug}>
-              <h1 className="card-title">{title}</h1>
+            <Link className="card-link" to={`.${post.fields.slug}`}>              
+            <h1 className="card-title">{title}</h1>
             </Link>
             <p className="card-date">{post.frontmatter.date}</p>
             <p className="card-description">{post.frontmatter.description}</p>
