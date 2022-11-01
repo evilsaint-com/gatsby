@@ -16,7 +16,6 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Query for markdown nodes to use in creating pages.
   const result = await graphql(
     `
     query AllQueries{
@@ -45,13 +44,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  console.log(result)
-  result.data.allMdx.nodes.forEach(node => {
+  const articles = result.data.allMdx.nodes
+  console.log(articles)
+  result.data.allMdx.nodes.forEach((node, index) => {
     createPage({
       path: `/blog${node.fields.slug}`,
       component: blogPostTemplate,
       context: {
                 post: node,
+                prev: index == 0 ? null : articles[index -1],
+                next: articles.length -1 ? articles[index + 1] : null
       },
     })
   })

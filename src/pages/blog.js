@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import Layout from "../components/layout";
 
 const BlogPage = ({data}) => {
-  console.log(data);
+  console.log('data', data);
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const siteDescription = data.site.siteMetadata.description;
   const posts = data.allMdx.nodes;
@@ -14,7 +14,7 @@ const BlogPage = ({data}) => {
       <h1>Blog</h1>
       <p>Blog page content</p>
       {posts.map((post) => {
-        console.log(post)
+        console.log('post line 17 blog.js', post)
 
         const title = post.frontmatter.title || post.fields.slug;
 
