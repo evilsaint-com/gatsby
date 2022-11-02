@@ -1,0 +1,309 @@
+/* THIS RESETS ALL HTML COMPONENTS FOR UNIFIED LOOK AND FEEL ACROSS BROWSERS
+    DO NOT DELETE OR CHANGE STYLES IN THIS BLOCK.
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* END OF RESET */
+
+body {
+    background: #1e1f26;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 18px;
+}
+
+
+div#container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1;
+    grid-template-areas: "sidebar main";
+}
+
+/* SIDE BAR */
+.sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    width: 20rem;
+    padding-left: 30px;
+    padding-top: 40px;
+    /* background-color: lightblue; */
+    background: #212529;
+}
+
+/* THE LINKS IN THE SIDEBAR */
+.sidebar nav ul li a {
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+    padding: 10px 5px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 15px;
+    font-weight: bold;
+}
+
+.sidebar nav ul li a:hover {
+    color: #ffdd40;
+}
+
+/* END OF SIDEBAR */
+
+/* MAIN CONTENT */
+
+main {
+    grid-area: main;
+}
+
+
+/*  HEADER BLOCK */
+main header {
+    color: #fff;
+    margin: 10px 40px;
+}
+
+main header h1 {
+    color: #ffdd40;
+    font-size: 27.67px;
+    font-family: 'OpenSans-Semibold';
+    text-transform: capitalize;
+    margin-bottom: 29px;
+    margin-top: 47px;
+}
+
+main header p {
+    font-size: 1.4rem;
+    font-family: 'OpenSans-Bold';
+    line-height: 24px;
+    color: #fff;
+}
+/* END OF CONTENT HEADER BLOCK */
+
+/* CONTENT CARD */
+main div.card {
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    background: #2c303a;
+    padding: 26px 19px;
+    border-radius: 20px;
+    margin: 10px 40px;
+}
+
+main div.card p {
+    font-size: 1rem;
+}
+
+main div.card a {
+    text-decoration: none;
+}
+
+main div.card h1 {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+}
+
+main div.card h2 {
+    display: block;
+    color: #6DE1F0;
+    font-weight: 600;
+    line-height: 1.8rem;
+}
+
+main div.card p.card-date {
+    font-size: 0.7rem;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    padding: 1rem 0;
+}
+
+main div.card p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    padding: 1rem 0;
+}
+
+main div.card ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+main div.card ul li {
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main div.card nav {
+    margin-top: 10px;
+}
+
+main div.card a.previous {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: #3e424d;
+    border-radius: 34px;
+    border: 1px solid #3e424d !important;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin: 3px;
+    padding: 8px 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+main div.card a.next {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: #3e424d;
+    border-radius: 34px;
+    border: 1px solid #3e424d !important;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin: 3px;
+    padding: 8px 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+/* END OF CONTENT CARD */

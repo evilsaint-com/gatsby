@@ -1,9 +1,13 @@
 import React from "react";
 import Sidebar from "./sidebar";
+import "./style.css";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
 
 const Container = ({ children }) => {
   return (
-    <div className="container" style={{ margin: `0 auto`, maxWidth: 650, padding: `0 1rem` }}>
+    <div id="container">
+      
       <Sidebar />
       <main className="main">{children}</main>
     </div>

@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import  Layout from "../components/layout";
 
 function blogPost({ pageContext }) {
+   
   const { post } = pageContext
   const prev = pageContext.prev 
   ? {
@@ -15,31 +16,30 @@ function blogPost({ pageContext }) {
     url : pageContext.next.fields.slug,
     title : pageContext.next.frontmatter.title 
   } : null
-   console.log(pageContext)
+
   return (
-    <Layout>
-      <p>
-      Ttile: {post.frontmatter.title}
-      </p>
-      <p>
-      Date: {post.frontmatter.date}
-      </p>
-      <p>
-      Description: {post.excerpt}
-      </p>
-      
-   {next && 
-      <Link to={`..${next.url}`}>
-         {"<Previous      "}
-         <span style={{marginRight: 50}}>{next.title}</span>
-      </Link>
-   }
-   {prev && 
-      <Link to={`..${prev.url}`}>
-         {"Next>      "}
-         <span>{prev.title}</span>
-      </Link>
-   }
+
+   <Layout>
+      <div className="card" key={post.fields.slug}>
+         <Link className="card-link" to={`.${post.fields.slug}`}>              
+         <h2 className="card-title">{post.frontmatter.title}</h2>
+         </Link>
+         <p className="card-date">{post.frontmatter.date}</p>
+         <p className="card-description">{post.description}</p>
+
+         <nav>
+         {next && 
+         <Link to={`..${next.url}`} className="previous">
+            <span>&lt; {next.title} </span>
+         </Link>
+         }
+         {prev && 
+            <Link to={`..${prev.url}`} className="next">
+               <span>{prev.title} &gt;</span>
+            </Link>
+         }
+         </nav>
+      </div>
    </Layout>
   )
 }

@@ -4,28 +4,27 @@ import SEO from "../components/seo";
 import Layout from "../components/layout";
 
 const BlogPage = ({data}) => {
-  console.log('data', data);
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const siteDescription = data.site.siteMetadata.description;
   const posts = data.allMdx.nodes;
   return (
     <Layout>
       <SEO title={siteTitle} description={siteDescription} />
-      <h1>Blog</h1>
-      <p>Blog page content</p>
+      <header>
+        <h1>Blog</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus consequat diam, non fringilla ante faucibus vel. Etiam sed condimentum elit.</p>
+      </header>
+      
       {posts.map((post) => {
-        console.log('post line 17 blog.js', post)
-
         const title = post.frontmatter.title || post.fields.slug;
 
         return (
           <div className="card" key={post.fields.slug}>
             <Link className="card-link" to={`.${post.fields.slug}`}>              
-            <h1 className="card-title">{title}</h1>
+            <h2 className="card-title">{title}</h2>
             </Link>
             <p className="card-date">{post.frontmatter.date}</p>
             <p className="card-description">{post.frontmatter.description}</p>
-            
           </div>
         );
       })}

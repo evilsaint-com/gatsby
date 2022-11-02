@@ -18,13 +18,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(
     `
-    query AllQueries{
+    query AllQueries {
       site {
         siteMetadata {
           title
         }
       }
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
         nodes {
           fields {
             slug
@@ -35,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             description
           }
+          body
         }
       }
     }
@@ -45,8 +46,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const articles = result.data.allMdx.nodes
-  console.log(articles)
   result.data.allMdx.nodes.forEach((node, index) => {
+    console.log('node', node)
     createPage({
       path: `/blog${node.fields.slug}`,
       component: blogPostTemplate,

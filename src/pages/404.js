@@ -10,10 +10,10 @@ const FourOhFourPage = ({data}) => {
   return (
     <Layout>
       <SEO title={siteTitle} description={siteDescription} />
-      <div>
+      <header>
         <h1>Hmmmmmm</h1>
         <p>You screwed something up there didn't you!!! ;-)</p>
-      </div>
+      </header>
     </Layout>
   ); 
 

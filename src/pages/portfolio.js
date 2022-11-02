@@ -3,15 +3,15 @@ import { Link, graphql } from "gatsby";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 
-const BooksPage = ({data}) => {
+const PortfolioPage = ({data}) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const siteDescription = data.site.siteMetadata.description;
-  
+
   return (
     <Layout>
       <SEO title={siteTitle} description={siteDescription} />
       <header>
-        <h1>Books</h1>
+        <h1>Portfolio</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus consequat diam, non fringilla ante faucibus vel. Etiam sed condimentum elit.</p>
       </header>
       <div className="card">
@@ -44,12 +44,12 @@ const BooksPage = ({data}) => {
         <p>Sed mi urna, porta et pulvinar id, gravida a nunc. Aliquam vestibulum, odio in aliquam lobortis, nisl sapien posuere metus, et bibendum urna arcu id velit. Mauris pretium ligula id hendrerit convallis. Quisque condimentum neque in ultricies pulvinar. Sed eget condimentum dolor. Donec molestie sem justo, eu dictum sem dignissim finibus. Maecenas eu malesuada diam. Curabitur quis nisi pretium sapien ullamcorper venenatis sit amet at ipsum. Nulla fringilla quis lorem a convallis. Quisque maximus congue augue, nec fringilla eros ornare et. Pellentesque tincidunt in orci id pharetra. Curabitur nec pulvinar arcu. Aliquam at congue sapien, dignissim feugiat erat. In luctus luctus tortor, eu pulvinar lorem facilisis a.</p>
 
       </div>
-
     </Layout>
   ); 
 
 }
-export default BooksPage
+
+export default PortfolioPage
 
 export const pageQuery = graphql`
   {
