@@ -73,4 +73,10 @@ if [ ! -z ${cover} ]; then
     wget ${cover}
 fi
 
-code index.mdx
+code index.mdx & disown
+
+read -p "Have you put conten in place? " yes
+
+if [ ! -z $yes ]; then
+~/my-online-portfolio/src/tutorials/pic.sh index.mdx
+fi
