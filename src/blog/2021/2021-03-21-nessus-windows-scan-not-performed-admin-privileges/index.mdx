@@ -1,0 +1,94 @@
+---
+title: "Nessus Windows Scan Not Performed with Admin Privileges"
+date: "2021-03-21"
+description: "This article demonstrates how to resolve the problem encountered when attempting to run a Nessus Windows scan but running to the following errors: "Nessus Windows Scan Not Performed with Admin Privileges" or  "Authentication Success Insufficient Access" by setting LocalAccountTokenFilterPolicy"
+coverimage: Nessus_Window_zCZae9N.jpg
+tags: error-message, nessus, windows
+published: true
+---
+# The error message
+
+On a recent job I received the following errors while trying to run Nessus:
+
+```
+Nessus Windows Scan Not Performed with Admin Privileges
+```
+
+and
+
+```
+Authentication Success Insufficient Access
+```
+
+I found this odd as I had used the `Admin` credentials to run my authenticated scan. 
+
+# Identifying the root cause
+
+The first thing I did was to double-check that the account I had been given was either in the local group Administrators or the domain group Domain Admins. It turned out I was in the `Administrators local group` but yet Nessus could not remotely connect to the `C$` share. I tried to connect to the C$ share from the command line to confirm if this was something wrong with Nessus. 
+
+```
+:::batch
+net use s: \\RemoteMachine\C$  /user:pentest
+```
+
+The result was, I got the following errors:
+
+```
+error 5
+```
+
+ or 
+
+```
+Access Denied
+```
+
+So Google to the rescue!  As it is likely you have found this page due to being on an engagement and you are stuck kicking your scan off (hopefully unlikely me you are not in the toilets researching on your phone while on a clients site).  I will skip the details of how I got to my eureka moment.
+
+## User Account Control (UAC )
+
+`User Account Control` prompts a user when a given action requires elevated rights. Under the default configuration, UAC affects remote connections in the following manner. All local accounts with the exception of the RID 500 Administrator must perform their privileged administrative actions by physically logging into the host or over Remote Desktop Protocol (RDP). 
+
+<b>Note: </b> Domain accounts that have local Administrator privileges such as being in the Domain Administrators group do not have to worry about this and can connect remotely.
+
+With one exception which we will come to shortly; any non RID 500 local admin account remotely connecting to a machine via WMI, PSEXEC, RPC, WinRM are returned tokens that are "filtered" (essentially medium integrity). 
+
+In my case, I have been given an account that was set up as a `Local Administrator` but this was not the default RID 500 user.
+
+## Admin Approval Mode
+
+`Admin Approval mode` is `disabled by default`; however, when this setting is `enabled` it enforces User Account Control (UAC) for the built-in Administrator. 
+
+This feature was first introduced in Windows Vista and as we can see from [following article on microsoft.com](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/7c705718-f58e-4886-8057-37c8fd9aede1) the setting is configured via the following registry key. 
+
+```
+:::batch
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\FilterAdministratorToken
+```
+
+Leaving this at `0` results in only the built-in Administrator account (RID 500) being given a `Full Token`; however, if this is set to `1` then the built-in Administrator is placed into `Admin Approval mode` when performing administrative tasks. 
+
+
+# The workaround - LocalAccountTokenFilterPolicy
+
+There is, however, a way to work around this! This is done by setting the following registry key to `1`:
+
+```
+:::batch
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy
+```
+
+This key does not exist by default however if it is added to the registry with a value of `1` then remote connections from all local Administrators (not just the RID 500 user) are granted full high-integrity tokens during authentication. 
+
+<b>As a side note</b>, this would also mean these users would be able to pass-the-hash. 
+
+If we look at the following article from Microsoft on [obtaining data from a remote computer](https://docs.microsoft.com/en-us/windows/win32/winrm/obtaining-data-from-a-remote-computer?redirectedfrom=MSDN) we can see this interesting snippet. 
+
+<i>"Because of User Account Control (UAC), the remote account must be a domain account and a member of the remote computer Administrators group. If the account is a local computer member of the Administrators group, then UAC does not allow access to the WinRM service. To access a remote WinRM service in a workgroup, UAC filtering for local accounts must be disabled by creating the following DWORD registry entry and setting its value to 1."</i>
+
+To set this registry setting, you can use:
+
+```
+:::batch
+REG add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
+```

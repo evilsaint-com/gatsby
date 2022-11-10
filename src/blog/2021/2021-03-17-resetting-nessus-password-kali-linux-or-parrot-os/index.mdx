@@ -1,0 +1,44 @@
+---
+title: "Resetting The Nessus Password On Kali Linux Or Parrot OS"
+date: "2021-03-17"
+description: ""
+coverimage: Resetting_The__dNWzqI3.jpg
+tags: nessus
+published: true
+---
+
+Have you ever returned to your Nessus to realise you have forgotten your password or just forgotten the user name?
+
+You are not alone, this happens to the best of us. 
+
+
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+  <img src="83bea23c-9bda-44b3-9a3f-2cc19ee69db1.png" class="img-fluid" alt="What is my password">
+  <figcaption class="figure-caption text-center fw-normal text-dark">What is my password.</figcaption>
+</figure>
+
+
+Nessus is the world’s most popular vulnerability assessment tool. It is an open-source vulnerability scanner although there is also a commercial option. option Open a terminal and type the command `cd /opt/nessus/sbin` to navigate to the `sbin` directory. Here type `ls`  to see the contents of this directory as shown below.
+
+
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+  <img src="b714d822-e088-431c-adac-830ff4f63679.png" class="img-fluid" alt="Nessus Directory">
+  <figcaption class="figure-caption text-center fw-normal text-dark">Nessus Directory.</figcaption>
+</figure>
+
+
+If you can't remember the user name then you can just run the following command `./nessuscli lsuser` to see all the Nessus users configured. 
+
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+  <img src="51cf2c23-aebf-4526-a67c-7878c9aaf0db.png" class="img-fluid" alt="Listing Users">
+  <figcaption class="figure-caption text-center fw-normal text-dark">Listing Users.</figcaption>
+</figure>
+
+Here, we have only one. Let us reset the 'evilsaint' user! 
+
+Type command ` ./nessuscli chpasswd evilsaint`. The system will prompt you to enter the new password. Enter the password two times as shown below. You have successfully reset your Nessus password. Now login with the new password.
+
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+  <img src="1ace8c68-2700-4242-ba14-a130df2ca3a6.png" class="img-fluid" alt="Changing the password">
+  <figcaption class="figure-caption text-center fw-normal text-dark">Changing the password.</figcaption>
+</figure>

@@ -1,0 +1,18 @@
+---
+title: "3DES Support For OpenSSL"
+date: "2021-08-17"
+description: ""
+coverimage: 3DES_Support_For_OpenSSL.jpg
+tags: ssl, tls
+published: true
+---
+
+```
+git clone https://github.com/drwetter/testssl.sh/ /opt
+cd /opt/testssl.sh/bin
+cp openssl.Linux.x86_64 /usr/bin/
+echo "export OPENSSL_CONF=/etc/ssl/" >> ~/.bashrc
+bash
+cd ~/
+openssl.Linux.x86_64 s_client -connect x.x.x.x:443 -cipher 3DES -tls1
+```
