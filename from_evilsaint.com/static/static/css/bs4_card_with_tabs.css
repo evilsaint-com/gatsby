@@ -1,0 +1,100 @@
+/***
+Bootstrap4 Card with Tabs by @mdeuerlein
+***/
+
+.card {
+    background-color: #2c303a;
+    border: 1px solid rgba(0, 34, 51, 0.1);
+}
+
+/* Tabs Card */
+
+.tab-card {
+    border:none;
+}
+
+.tab-card-header {
+    background:none;
+    border-bottom: none;
+}
+
+/* Default mode */
+.tab-card-header > .nav-tabs {
+    border: none;
+    margin: 0px;
+}
+
+.tab-card-header > .nav-tabs > li {
+    margin-right: 2px;
+}
+
+.tab-card-header > .nav-tabs > li > a {
+    border: 0;
+    border: 1px solid #dedede;
+    font-size: 20px;
+    margin-right: 2px;
+    margin-bottom: 4px;
+    color: #f8f9fa;
+    padding: 3px 10px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 4px;
+}
+
+.tab-card-header > .nav-tabs > li > a.show {
+    border:1px solid #dedede;
+    color: #585858;
+    background-color: #e6e6e6;
+}
+.tab-card-header > .nav-tabs > li > a:hover {
+    color: #2bd2aa;
+    border: 1px solid #2bd2aa;
+}
+
+.tab-card-header > .tab-content {
+    padding-bottom: 0;
+}
+
+.cate-alpha {
+    color: #f8f9fa; 
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+    font-size: 25px;
+    margin: 0 2rem 1rem;
+    padding: 0;
+}
+
+.azcategories {
+    float: left;
+}
+
+.azmenu {
+    padding: 0;
+    margin: 0;
+}
+
+.azmenu li {
+    padding: 0;
+    margin: 0;
+    display: block;
+    text-decoration: none;
+    line-height: 28px;
+}
+
+.azmenu li span {
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.azmenu li a {
+    padding: 0;
+    margin: 0;
+    color: #2bd2aa;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.azmenu li a:hover {
+    color: #2bd2aa;
+    text-decoration: none;
+}

@@ -1,0 +1,151 @@
+/**
+   General
+**/
+body {
+  font-family: "Open Sans", sans-serif; }
+
+a {
+  color: #106eea; }
+
+a:hover {
+  color: #3b8af2;
+  text-decoration: none; }
+
+button.btn {
+  font-weight: bold; }
+
+footer {
+  background-color: #1b2633; }
+  footer h2 {
+    color: #68c7fd; }
+  footer p {
+    color: white;
+    font-size: 1.25rem; }
+
+h2 {
+  text-align: center;
+  font-weight: bold; }
+
+p {
+  text-align: justify; }
+
+/**
+   Header
+**/
+#header {
+  background: var(--dark);
+  padding: 0.5rem 0; }
+  #header .logo img {
+    max-height: 3rem; }
+
+/**
+   Banner Section
+**/
+#banner {
+  width: 100%;
+  background: url( "../../images/sales_page/hero.png" ) top left;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  color: white;
+  min-height: 540px; }
+  #banner button.btn {
+    background-color: #fe1f1f;
+    border-color: #fe1f1f; }
+    #banner button.btn :active {
+      border-color: #f31e1e; }
+    #banner button.btn :focus {
+      border-color: #f31e1e; }
+  #banner #signup-form input {
+    width: 37.5%; }
+
+#banner .container {
+  position: relative;
+  padding-top: 132px; }
+
+@media (max-width: 992px) {
+  #banner .container {
+    padding-top: 58px; } }
+
+@media (max-width: 768px) {
+  #banner {
+    height: 100vh; } }
+
+/**
+   BADGES SECTION
+**/
+#badges {
+  color: #1578b1; }
+  #badges img {
+    display: inline-block;
+    height: 4rem;
+    margin-bottom: 1rem;
+    width: auto;
+    transition: all 0.4s ease-in-out; }
+    #badges img :hover {
+      transform: scale(1.15); }
+
+/**
+  ABOUT SECTION
+**/
+#about h2 {
+  color: #1578b1; }
+
+/**
+  COURSE MODULES SECTION
+**/
+#course-modules h2 {
+  color: #1578b1; }
+
+#course-modules .course-module {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important; }
+  #course-modules .course-module h4 {
+    color: #1578b1;
+    font-weight: bold; }
+  #course-modules .course-module img {
+    width: 8rem; }
+  #course-modules .course-module .course-module-content {
+    background-color: #9dbdcf; }
+
+/**
+  TESTIMONIALS SECTION
+**/
+#testimonials p {
+  text-align: center; }
+
+#testimonials .testimonial-quote {
+  font-style: italic; }
+
+#testimonials .testimonial-signature {
+  color: #1578b1; }
+
+/**
+   ADDS
+**/
+#ad1 {
+  width: 100%;
+  background: url( "../../images/sales_page/ad1_bg.png" ) top left;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 12rem; }
+  #ad1 h2 {
+    color: #68c7fd;
+    font-size: 2.25rem;
+    font-weight: bold; }
+  #ad1 span {
+    color: white;
+    font-size: 1.25rem; }
+
+#ad2 .card .card-header {
+  background-color: #1b2633;
+  color: white; }

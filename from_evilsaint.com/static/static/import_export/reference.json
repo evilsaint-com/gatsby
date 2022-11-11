@@ -1,0 +1,15 @@
+{"id":2,\n "title":"Elevating Privileges By Exploiting Weak Folder Permissions",\n "url":"http://www.greyhathacker.net/?p=738",\n "category_id":6}
+{"id":3,\n "title":"Windows Privilege Escalation Fundamentals",\n "url":"http://www.fuzzysecurity.com/tutorials/16.html",\n "category_id":6}
+{"id":4,\n "title":"Juniper Console Connection Timeout",\n "url":"https://kb.juniper.net/InfoCenter/index?page=content&id=KB5247",\n "category_id":62}
+{"id":5,\n "title":"Set CLI IDLE Timeout",\n "url":"https://www.juniper.net/documentation/en_US/junos/topics/reference/command-summary/set-cli-idle-timeout.html",\n "category_id":62}
+{"id":6,\n "title":"Securing Administrative Access to a Cisco Router",\n "url":"https://www.pearsonitcertification.com/articles/article.aspx?p=102180&seqNum=4",\n "category_id":63}
+{"id":7,\n "title":"VMware Virtual Disk Manager",\n "url":"https://www.vmware.com/support/ws45/doc/disks_vdiskmanager_eg_ws.html",\n "category_id":64}
+{"id":8,\n "title":"FilterAdministratorToken",\n "url":"https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/7c705718-f58e-4886-8057-37c8fd9aede1",\n "category_id":null}
+{"id":9,\n "title":"Pass-the-Hash Is Dead: Long Live LocalAccountTokenFilterPolicy",\n "url":"https://www.harmj0y.net/blog/redteaming/pass-the-hash-is-dead-long-live-localaccounttokenfilterpolicy/",\n "category_id":null}
+{"id":10,\n "title":"Remote Local Administrator",\n "url":"https://blog.ahasayen.com/remote-local-administrator-localaccounttokenfilterpolicy/",\n "category_id":null}
+{"id":11,\n "title":"LocalAccountTokenFilterPolicy accessing the C$ with a local account",\n "url":"https://www.adamcouch.co.uk/localaccounttokenfilterpolicy-accessing-the-c-with-a-local-account/",\n "category_id":null}
+{"id":12,\n "title":"Tenable Nessus tips and tricks",\n "url":"https://astrix.co.uk/news/2019/11/26/nessus-professional-tips-and-tricks",\n "category_id":null}
+{"id":13,\n "title":"etting up Windows Terminal, WSL and Oh-my-Zsh",\n "url":"https://www.ivaylopavlov.com/setting-up-windows-terminal-wsl-and-oh-my-zsh/#.X2TSmz-Smud",\n "category_id":68}
+{"id":14,\n "title":"Commando VM Installation Configuration",\n "url":"https://blog.stealthbits.com/commando-vm-installation-configuration/",\n "category_id":68}
+{"id":15,\n "title":"Win Kex",\n "url":"https://www.kali.org/docs/wsl/win-kex/",\n "category_id":70}
+{"id":16,\n "title":"The Windows Subsystem for Linux On Windows 10",\n "url":"https://adamtheautomator.com/windows-subsystem-for-linux/#PowerShell_%E2%80%93%3E_Bash",\n "category_id":68}
