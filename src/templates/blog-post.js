@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
 import  Layout from "../components/layout";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import rehypeRaw from 'rehype-raw'
 
-function blogPost({ pageContext }) {
+function BlogPost({ pageContext }) {
    
   const { post } = pageContext
   const prev = pageContext.prev 
@@ -21,12 +23,12 @@ function blogPost({ pageContext }) {
 
    <Layout>
       <div className="card" key={post.fields.slug}>
-         <Link className="card-link" to={`.${post.fields.slug}`}>              
+         <Link className="card-link">              
          <h2 className="card-title">{post.frontmatter.title}</h2>
          </Link>
          <p className="card-date">{post.frontmatter.date}</p>
          <p className="card-description">{post.description}</p>
-
+         <ReactMarkdown children={post.body} rehypePlugins={[rehypeRaw]} />
          <nav>
          {next && 
          <Link to={`..${next.url}`} className="previous">
@@ -45,4 +47,4 @@ function blogPost({ pageContext }) {
 }
 
 
-export default blogPost
+export default BlogPost

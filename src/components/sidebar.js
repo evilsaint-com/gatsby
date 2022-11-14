@@ -1,7 +1,10 @@
 import React from "react";
-
-
+import Tags from "./tags"
+import { useStaticQuery, graphql, StaticQuery } from "gatsby";
+import createTagsSet from "../utils/create-tags-set";
 const Sidebar = ({ siteTitle, siteDescription }) => {
+
+    
     return (
         <aside className="sidebar">
             <div class="logo">
@@ -18,6 +21,7 @@ const Sidebar = ({ siteTitle, siteDescription }) => {
                     <li><a href="/portfolio" className="portfolio-link">Portfolio</a></li>
                 </ul>
             </nav>
+            <Tags />
         </aside>
     );
 };

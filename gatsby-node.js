@@ -1,3 +1,4 @@
+
 const slugify = require(`@sindresorhus/slugify`)
 
 exports.onCreateNode = ({ node, actions }) => {
@@ -34,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
             date(formatString: "Do MMMM YYYY ")
             title
             description
+            tags
           }
           body
         }
@@ -42,12 +44,26 @@ exports.createPages = async ({ graphql, actions }) => {
   `
   )
 
-
-
+console.log(result)
+console.log(result.data.allMdx.nodes)
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const tagsTemplate = path.resolve(`./src/templates/tags-template.js`)
   const articles = result.data.allMdx.nodes
+
+  let tagsArr = []
+  result.data.allMdx.nodes.forEach(
+    node => {
+      let tag = node.frontmatter.tags
+      if (tag != null)
+      {
+        tag && tag.includes(",") ? 
+        tag.split(",").map(tag => tagsArr.push(tag)) : tagsArr.push(tag)
+      }
+    }
+  )
+
+  tagsArr = tagsArr.map(tag => tag && tag != undefined && tag.trim())
   result.data.allMdx.nodes.forEach((node, index) => {
-    console.log('node', node)
     createPage({
       path: `/blog${node.fields.slug}`,
       component: blogPostTemplate,
@@ -58,5 +74,14 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  result.data.allMdx.nodes.forEach((node, index) => {
+    createPage({
+      path: `/tags/${tagsArr[index]}`,
+      component: tagsTemplate,
+      context: {
+                posts: result,
+                tag: tagsArr[index]
+      },
+    })
+  })
 }
-

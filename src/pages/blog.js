@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import SEO from "../components/seo";
 import Layout from "../components/layout";
 
 const BlogPage = ({data}) => {
@@ -9,7 +8,6 @@ const BlogPage = ({data}) => {
   const posts = data.allMdx.nodes;
   return (
     <Layout>
-      <SEO title={siteTitle} description={siteDescription} />
       <header>
         <h1>Blog</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus consequat diam, non fringilla ante faucibus vel. Etiam sed condimentum elit.</p>
@@ -17,11 +15,20 @@ const BlogPage = ({data}) => {
       
       {posts.map((post) => {
         const title = post.frontmatter.title || post.fields.slug;
+        const tag = post.frontmatter.tags && post.frontmatter.tags.includes(",") ? 
+        post.frontmatter.tags.split(",") : post.frontmatter.tags
 
         return (
           <div className="card" key={post.fields.slug}>
             <Link className="card-link" to={`.${post.fields.slug}`}>              
             <h2 className="card-title">{title}</h2>
+            {
+              tag ?
+              Array.isArray(tag) ? tag.map(tag => <span className="tags"> {tag} </span>)
+              :
+              <span className="tags"> {tag} </span>
+              : null
+            }
             </Link>
             <p className="card-date">{post.frontmatter.date}</p>
             <p className="card-description">{post.frontmatter.description}</p>
@@ -36,13 +43,13 @@ const BlogPage = ({data}) => {
 export default BlogPage;
 
 export const pageQuery = graphql`
-  {
+  query MyQuery{
     site {
       siteMetadata {
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
         fields {
           slug
@@ -52,6 +59,7 @@ export const pageQuery = graphql`
           date(formatString: "Do MMMM YYYY ")
           title
           description
+          tags
         }
       }
     }
