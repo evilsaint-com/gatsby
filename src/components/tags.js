@@ -8,7 +8,7 @@ const Tags = () => {
             siteBuildMetadata {
               id
             }
-            allMdx {
+            allMdx(filter: {frontmatter: {posttype: {eq: "blog"}}}) {
               nodes {
                 frontmatter {
                   tags

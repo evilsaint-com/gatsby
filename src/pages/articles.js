@@ -1,20 +1,15 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import Layout from "../components/layout";
-
-const BlogPage = ({data}) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const siteDescription = data.site.siteMetadata.description;
-  const posts = data.allMdx.nodes;
-  
-  return (
-    <Layout>
-      <header>
-        <h1>Blog</h1>
+import  Layout  from "../components/layout"
+import {graphql, Link} from "gatsby"
+const Articles = ({data}) => {
+    const posts = data.allMdx.nodes;
+    return(
+        <Layout>
+    <header>
+        <h1>Articles</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus consequat diam, non fringilla ante faucibus vel. Etiam sed condimentum elit.</p>
-      </header>
-      
-      {posts.map((post) => {
+    </header>
+    {posts.map((post) => {
         const title = post.frontmatter.title || post.fields.slug;
         const tag = post.frontmatter.tags && post.frontmatter.tags.includes(",") ? 
         post.frontmatter.tags.split(",") : post.frontmatter.tags
@@ -36,24 +31,23 @@ const BlogPage = ({data}) => {
           </div>
         );
       })}
-    </Layout>
-  );
-};
+        </Layout>
+    )
+}
 
+export default Articles
 
-export default BlogPage;
-
-export const pageQuery = graphql`
-  query MyQuery{
+export const articleQuery = graphql`
+  query ArticleQuery{
     site {
       siteMetadata {
         title
       }
     }
     allMdx(
-      sort: {frontmatter: {date: DESC}}
-      filter: {frontmatter: {posttype: {eq: "blog"}}}
-      ) {
+        sort: {frontmatter: {date: DESC}}
+        filter: {frontmatter: {posttype: {eq: "article"}}}
+        ) {
       nodes {
         fields {
           slug

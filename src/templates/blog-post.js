@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw'
 function BlogPost({ pageContext }) {
    
   const { post } = pageContext
+  
   const prev = pageContext.prev 
   ? {
     url : `${pageContext.prev.fields.slug}`,

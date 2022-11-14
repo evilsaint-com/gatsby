@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             description
             tags
+            posttype
           }
           body
         }
@@ -44,14 +45,21 @@ exports.createPages = async ({ graphql, actions }) => {
   `
   )
 
-console.log(result)
-console.log(result.data.allMdx.nodes)
+
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const tagsTemplate = path.resolve(`./src/templates/tags-template.js`)
   const articles = result.data.allMdx.nodes
 
   let tagsArr = []
-  result.data.allMdx.nodes.forEach(
+  let blogArr = []
+  let articleArr = []
+  //only select posts with the type blog
+  console.log(result.data.allMdx)
+  blogArr = result.data.allMdx.nodes.filter(node => node.frontmatter.posttype == "blog")
+  articleArr = result.data.allMdx.nodes.filter(node => node.frontmatter.posttype == "article")
+
+  //modify tags from the query and push to tagsArr
+  blogArr.forEach(
     node => {
       let tag = node.frontmatter.tags
       if (tag != null)
@@ -61,20 +69,33 @@ console.log(result.data.allMdx.nodes)
       }
     }
   )
-
+// trim whitespaces
   tagsArr = tagsArr.map(tag => tag && tag != undefined && tag.trim())
-  result.data.allMdx.nodes.forEach((node, index) => {
+  //blog posts 8080/blog/x
+  blogArr.forEach((node, index) => {
     createPage({
       path: `/blog${node.fields.slug}`,
       component: blogPostTemplate,
       context: {
                 post: node,
-                prev: index == 0 ? null : articles[index -1],
-                next: articles.length -1 ? articles[index + 1] : null
+                prev: index == 0 ? null : blogArr[index -1],
+                next: blogArr.length -1 ? blogArr[index + 1] : null
       },
     })
   })
-  result.data.allMdx.nodes.forEach((node, index) => {
+  articleArr.forEach((node, index) => {
+    createPage({
+      path: `/articles${node.fields.slug}`,
+      component: blogPostTemplate,
+      context: {
+                post: node,
+                prev: index == 0 ? null : articleArr[index -1],
+                next: articleArr.length -1 ? articleArr[index + 1] : null
+      },
+    })
+  })
+  // tag posts 8080/tags/x
+  blogArr.forEach((node, index) => {
     createPage({
       path: `/tags/${tagsArr[index]}`,
       component: tagsTemplate,

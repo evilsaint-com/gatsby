@@ -5,6 +5,7 @@ description: "The latest edition of Hashcat now has an auto-detect mode built-in
 coverimage: Hashcat_Now_Offers_Auto_Detection.jpg
 tags: hashcat
 published: true
+posttype: blog
 ---
 I just learnt this from a colleague at work and felt it was worth a share. Hashcat now has auto-detect functionality. Run your Hashcat binary and pass only the hash file, and Hashcat will try and work out the hash types included in the file and give you the mode you need to crack them. 
 
@@ -12,12 +13,14 @@ I just learnt this from a colleague at work and felt it was worth a share. Hashc
 hashcat <hash file>
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/394dc713-e2a6-40da-98fa-da8f02387e65.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+    <img src="/static/394dc713-e2a6-40da-98fa-da8f02387e65.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 In the above example, I am using Hashcat version 6.2.4; however, I have been informed that the auto-detect feature was added in Hashcat 6.2.2. 
 
 In the screen capture below, we can see the detected hash types in my file. 
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/b8ae95f9-fea9-4c82-ad56-1fafef2e84ef.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+    <img src="/static/b8ae95f9-fea9-4c82-ad56-1fafef2e84ef.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 The orange text indicates that this is a best-effort detection; however, it is correct in my case. The file contains five NTLM hashes.

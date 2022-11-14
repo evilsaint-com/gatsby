@@ -6,7 +6,7 @@ import createTagsSet from "../utils/create-tags-set";
 
 const TagsPage = ({pageContext}) => {
     const posts = pageContext.posts.data.allMdx.nodes
-    
+    console.log(pageContext.posts.data)
 
 let tagsArr = createTagsSet(pageContext.posts.data)
 tagsArr = Array.from(tagsArr).map(tag => tag.trim())
@@ -19,9 +19,10 @@ return (
     {
     postsWithTags.map(post =>
     {
+      const url = post.frontmatter.posttype == "blog" ? "blog" : "articles"
         return (
             <div className="card" >
-        <Link className="card-link" to={`../../blog${post.fields.slug}`}>              
+        <Link className="card-link" to={`../../${url}${post.fields.slug}`}>              
         <h2 className="card-title">{post.frontmatter.title}</h2>
         </Link>
         <p className="card-date">{post.frontmatter.date}</p>

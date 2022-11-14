@@ -1,5 +1,7 @@
 function createTagsSet(tags)
 {
+    if (!tags.allMdx)
+    return 0
     const tagsArrObj = tags.allMdx.nodes.map(obj => obj.frontmatter.tags ?  obj.frontmatter.tags.split(",") : null)
 const tagsArr = []
 for (let i = 0; i < tagsArrObj.length; i++)
