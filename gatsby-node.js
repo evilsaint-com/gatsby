@@ -53,10 +53,12 @@ exports.createPages = async ({ graphql, actions }) => {
   let tagsArr = []
   let blogArr = []
   let articleArr = []
+  let ctfArr = []
   //only select posts with the type blog
   console.log(result.data.allMdx)
   blogArr = result.data.allMdx.nodes.filter(node => node.frontmatter.posttype == "blog")
   articleArr = result.data.allMdx.nodes.filter(node => node.frontmatter.posttype == "article")
+  ctfArr = result.data.allMdx.nodes.filter(node => node.frontmatter.posttype == "ctf")
 
   //modify tags from the query and push to tagsArr
   blogArr.forEach(
@@ -72,6 +74,7 @@ exports.createPages = async ({ graphql, actions }) => {
 // trim whitespaces
   tagsArr = tagsArr.map(tag => tag && tag != undefined && tag.trim())
   //blog posts 8080/blog/x
+
   blogArr.forEach((node, index) => {
     createPage({
       path: `/blog${node.fields.slug}`,
@@ -83,6 +86,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
   articleArr.forEach((node, index) => {
     createPage({
       path: `/articles${node.fields.slug}`,
@@ -94,6 +98,19 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  ctfArr.forEach((node, index) => {
+    createPage({
+      path: `/ctfs${node.fields.slug}`,
+      component: blogPostTemplate,
+      context: {
+                post: node,
+                prev: index == 0 ? null : ctfArr[index -1],
+                next: ctfArr.length -1 ? ctfArr[index + 1] : null
+      },
+    })
+  })
+
   // tag posts 8080/tags/x
   blogArr.forEach((node, index) => {
     createPage({
