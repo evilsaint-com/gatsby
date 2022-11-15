@@ -5,6 +5,7 @@ description: ""
 coverimage: Searching_Metasploit.jpg
 tags: metasploit
 published: true
+posttype: tutorial
 ---
 
 # Searching Metasploit
@@ -33,7 +34,7 @@ search cve:2011
 
 Careful when analysing the results of this above command. If you use the above example you might see a row like
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="a706cbf8-d01d-4895-9c5d-ea82775626c3.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Snippet From Search for CVE from 2011 </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/a706cbf8-d01d-4895-9c5d-ea82775626c3.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Snippet From Search for CVE from 2011 </figcaption></figure>
 
 ```ruby
 68   exploit/unix/webapp/joomla_tinybrowser                            2009-07-22
@@ -58,7 +59,7 @@ search aka:heartbleed
 search aka:eternalblue
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="2dd2c2c8-f46d-4f43-ad73-d1688a5371de.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Metasploit Search For Heartbleed </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/2dd2c2c8-f46d-4f43-ad73-d1688a5371de.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Metasploit Search For Heartbleed </figcaption></figure>
 
 Search by platform
 ```ruby
@@ -124,7 +125,7 @@ However, we can also reverse the search entries so we get the results starting Z
 search type:exploit cve:2017 platform:-windows port:80 rank:excellent check -s name -r
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="e83e8a98-93c0-46e4-a1a2-5f3ac4ad0111.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Reverse Name Order Search</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/e83e8a98-93c0-46e4-a1a2-5f3ac4ad0111.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Reverse Name Order Search</figcaption></figure>
 
 
 Or we can search by date order (which of course can be reversed)
@@ -134,7 +135,7 @@ search type:exploit cve:2017 platform:-windows port:80 rank:excellent check -s d
 search type:exploit cve:2017 platform:-windows port:80 rank:excellent check -s date -r 
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="4b1d7537-a1d0-4f8d-9860-302f79e2c2da.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Reverse Date Order Search</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/4b1d7537-a1d0-4f8d-9860-302f79e2c2da.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Reverse Date Order Search</figcaption></figure>
 
 What if we are happy with our results but we want to save them so we can work through them and mark them off? Metasploit allows you to export your results to a CSV
 
@@ -144,7 +145,7 @@ search type:exploit cve:2017 platform:-windows port:80 rank:excellent check  -o 
 [*] Wrote search results to /tmp/output.csv
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="3714d5e4-addd-4458-8d4f-9783762aec6d.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Export to CSV</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/3714d5e4-addd-4458-8d4f-9783762aec6d.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Export to CSV</figcaption></figure>
 
 Another example where we search for all Metasploit modules of type exploit, for the Windows platform and operate on port 445 (SMB). We then specify the ‘check’ column as the search column meaning the exploits will be sorted by those that have a ‘check’ option first and then we output the result to CSV. 
 

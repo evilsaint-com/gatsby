@@ -324,3 +324,18 @@ main div.card a.next {
     text-decoration: none;
     text-transform: capitalize;
 }
+
+.searchTerm {
+    width: 150%;
+    border: 3px solid gray;
+    
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+  }
+  
+  .searchTerm:focus{
+    color: black;
+  }

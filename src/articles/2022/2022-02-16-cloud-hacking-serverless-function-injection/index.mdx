@@ -56,7 +56,7 @@ This example demonstrates how to execute unwanted code via a serverless function
 
 The application converts Doc files to text from a URL. The output is then displayed on the screen.
 
-![](b576cf8f-2a9d-43b3-a1d1-3ed12f9b0f12.png)
+<img src="/static/b576cf8f-2a9d-43b3-a1d1-3ed12f9b0f12.png">
 
 In case of OWASP ServerlessGoat, the injection vulnerability occurs when the Doc filename is appended with code that gets executed. 
 
@@ -75,7 +75,7 @@ https://www.puresec.io/hubfs/document.doc;env
 
 The output will display a secret (the AWS secret access key)!
 
-![](96002e52-8f1b-496a-ba9c-0c4631826a30.png)
+<img src="/static/96002e52-8f1b-496a-ba9c-0c4631826a30.png">
 
 Or to output text of your choice, you can use the "echo" command:
 ```
@@ -84,7 +84,8 @@ https://www.puresec.io/hubfs/document.doc;echo "hello"
 
 Displayed below is "hello" echoed back to us.
 
-![](6359b91a-fa74-45f0-b9c2-52f5b3a49fae.png)
+<img src="/static/6359b91a-fa74-45f0-b9c2-52f5b3a49fae.png">
+
 
 To understand why this works, you may wish to review the code used for the function:
 ```

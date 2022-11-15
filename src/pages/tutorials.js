@@ -1,16 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import  Layout  from "../components/layout"
 import {graphql, Link} from "gatsby"
-const Ctfs = ({data}) => {
+import Header from "../components/header";
+
+const Tutorials = ({data}) => {
+
     const posts = data.allMdx.nodes;
-    console.log(data)
+    
+    const [searchInput, setSearchInput] = useState("");
+
+  let filteredPosts = posts.filter(post => post.frontmatter.title.
+    toLowerCase()
+    .match(searchInput))
+
+  const handleChange = (e) => {
+      e.preventDefault();
+      setSearchInput(e.target.value)
+    }
+    const loop = searchInput.length > 0 ? filteredPosts : posts
+
     return(
         <Layout>
+            <Header handleChange={handleChange} />
     <header>
         <h1>Tutorials</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus consequat diam, non fringilla ante faucibus vel. Etiam sed condimentum elit.</p>
     </header>
-    {posts.map((post) => {
+    {loop.map((post) => {
         const title = post.frontmatter.title || post.fields.slug;
         const tag = post.frontmatter.tags && post.frontmatter.tags.includes(",") ? 
         post.frontmatter.tags.split(",") : post.frontmatter.tags
@@ -36,7 +52,7 @@ const Ctfs = ({data}) => {
     )
 }
 
-export default Ctfs
+export default Tutorials
 
 export const ctfQuery = graphql`
   query CtfQuery{

@@ -38,31 +38,31 @@ Aggressive mode
 
 Lab Nine in *La Maison de saint* is the following setup: a Windows Server 2016 and a Windows 10, 64-bit operating system. It can be seen in the screenshot that both machines have non-persistent hard disks and have their operating system build numbers in their title. They are both set up on their own VM Net Number.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="16e99dcd-fac2-4635-b8d2-19dcf8f1ba91.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/16e99dcd-fac2-4635-b8d2-19dcf8f1ba91.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="f251ca61-a2d6-4d7d-bf93-61d86f0630d3.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/f251ca61-a2d6-4d7d-bf93-61d86f0630d3.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 <aside>
 💡 Note,  the benefit of non-persistent disks is that they will maintain the configuration if the machine is rebooted. However, if the machine is shut down, it will revert to its previous configuration when turned back on.
 </aside>
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="3f7498cb-d58f-4cb0-9fad-6f58f7ee317f.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/3f7498cb-d58f-4cb0-9fad-6f58f7ee317f.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="e7597ff9-5b3f-454a-a6d2-df0c6b80379e.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/e7597ff9-5b3f-454a-a6d2-df0c6b80379e.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 Initial configuration if we look at the above screenshots, we can identify the two machines' hostname and IP address. The windows 10 machine is called "client", and the Windows Server machine is called "server". These are on IP 10.10.10.100 and 10.10.10.250
 
 There is an IIS default web application on port 80 of the server that we will connect to test the IP Sec configuration.  The below screenshot shows the connection to the web application and a blend of TCP and HTTP traffic showing up in Wireshark. 
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="2920a73d-9649-43af-abce-d26b900989e8.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Wireshark open and HTTP traffic showing. Web application (IIS default start page)</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/2920a73d-9649-43af-abce-d26b900989e8.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Wireshark open and HTTP traffic showing. Web application (IIS default start page)</figcaption></figure>
 
 Let us navigate to the start menu and open "Windows Firewall with Advanced Security".
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="623916a1-7a2f-4c09-b7d9-a660b45ef4b5.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/623916a1-7a2f-4c09-b7d9-a660b45ef4b5.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 We will open the Windows Firewall with Advanced Security, select Connect security policy from the left-hand side, and create a new rule on the right-hand side.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="da5a5280-fc26-44b4-a4c7-0d55a1fc6cbe.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/da5a5280-fc26-44b4-a4c7-0d55a1fc6cbe.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 In the modal that appears, we will have five different rule options.
 
@@ -74,35 +74,35 @@ In the modal that appears, we will have five different rule options.
 
 We will configure a server to server connection.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="42c71ddf-36a0-42a5-900f-9d6bef82afb0.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/42c71ddf-36a0-42a5-900f-9d6bef82afb0.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 It will then ask us for the endpoints; we can select the two endpoints per the IP Addresses mentioned earlier.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="fd0dfa3a-7106-44c3-af8f-50a791ec3170.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/fd0dfa3a-7106-44c3-af8f-50a791ec3170.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 On the next screen, we are asked several options regarding whether we want to require or request authentication for inbound and outbound scenarios. We want to request authentication for inbound and outbound connections, but we will not require it for communication (It is nice to have, desired but not enforced).
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="7cb25c35-099c-432a-8402-5845d69573fd.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/7cb25c35-099c-432a-8402-5845d69573fd.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 On the following screen, we can set up an authentication method. As mentioned previously, we can see computer certificates as one of the authentication options. If we select the Advanced option and click customise, we will be taken to a screen to configure a customised advanced authentication method.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="7d634e06-f6b9-4435-b7c7-64909235b215.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/7d634e06-f6b9-4435-b7c7-64909235b215.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 In this case, we will click to add the first authentication method and select the pre-shared key.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="01176cb6-8749-44ff-9ce8-88868e1fe1d0.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/01176cb6-8749-44ff-9ce8-88868e1fe1d0.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="dbb1dab6-5843-4253-a585-c973e23b7494.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/dbb1dab6-5843-4253-a585-c973e23b7494.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 Pre-Shared Keys (as you can see from the warning) are not recommended; however, they are the easiest way to set up the configuration for our lab.
 
 We will then click OK and OK again, then select next to move on to the next screen. 
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="7179dcfb-f060-43ab-92b4-a05655d52ff8.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/7179dcfb-f060-43ab-92b4-a05655d52ff8.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 We will apply this rule to all types of networks, domain, private and public.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="af164b02-b866-46cc-931f-2973fbd34170.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/af164b02-b866-46cc-931f-2973fbd34170.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 We will now refresh our browser connection and look inside Wireshark. Packets 61 and 62 show are initial connection on TCP port 80 and then shortly after we can now see the six packets that make up the "main mode" and the following "quick mode" packets.
 
@@ -110,7 +110,7 @@ Because we have set up a secure connection between two endpoints, as shown in th
 
 However, if we set the endpoint range to be any in the following range, and we happen to be inside that range, then we might get some output that we can see from our penetration testing tools.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="03f2b448-4b09-41af-8074-9dfd4e5a24e6.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/03f2b448-4b09-41af-8074-9dfd4e5a24e6.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">  </figcaption></figure>
 
 ## Using Ike-Scan
 

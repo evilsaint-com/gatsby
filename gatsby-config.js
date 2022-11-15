@@ -17,21 +17,13 @@ module.exports = {
     resolve: 'gatsby-plugin-mdx',
     options: {
       extensions: [`.mdx`, `md`],
-      gatsbyRemarkPlugins: [
-        {
-          resolve: `gatsby-remark-highlight-code`,
-          options: {
-            terminal: "ubuntu",
-          },
-        },
-      ],
     },
   },
   {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": `${__dirname}/src/images/`
     },
     __key: "images"
   },
@@ -45,13 +37,6 @@ module.exports = {
   },
   {
     resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        {
-          resolve: `gatsby-remark-highlight-code`,
-        },
-      ],
-    },
   },
   {
     resolve: 'gatsby-source-filesystem',

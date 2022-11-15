@@ -1,14 +1,14 @@
 import React from "react";
 import Tags from "./tags"
-import { useStaticQuery, graphql, StaticQuery } from "gatsby";
-import createTagsSet from "../utils/create-tags-set";
-const Sidebar = ({ siteTitle, siteDescription }) => {
+const Sidebar = () => {
 
     
     return (
         <aside className="sidebar">
             <div class="logo">
-				<a href="/"><img src="../static/images/logo.png" alt="Logo" title="Logo" /></a>
+				<a href="/"><img
+                style={{width: 250}}
+                src="/static/evilsaint_shield_logo.png" alt="Logo" title="Logo" /></a>
 			</div>
             <nav id="side-menu">
                 <ul>

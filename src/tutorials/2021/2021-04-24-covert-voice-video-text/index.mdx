@@ -60,7 +60,7 @@ pip install --upgrade google-cloud-speech
 		
 Next, place the downloaded API key in the projects directory. You do not need to keep the default name, you can call it anything you want. I have decided to rename mine to `config.json`
 
-<img src="cf20d2a3-e0cd-4d8b-87d9-6fc0c8a2c5f2.png" class="img-fluid" alt="">
+<img src="/static/cf20d2a3-e0cd-4d8b-87d9-6fc0c8a2c5f2.png" class="img-fluid" alt="">
 
 Next Step, set the environment variable for the config file.
 ```
@@ -100,9 +100,9 @@ Edit the following lines for the Google Cloud Bucket and the local file function
 nano -l transcribe_async.py
 ```
 
-<img src="f943465c-0866-48a2-be78-037f02b45b4c.png" class="img-fluid" alt="">
+<img src="/static/f943465c-0866-48a2-be78-037f02b45b4c.png" class="img-fluid" alt="">
 
-<img src="3317f1c2-cd2e-4f04-8385-98117a818cca.png" class="img-fluid" alt="">
+<img src="/static/3317f1c2-cd2e-4f04-8385-98117a818cca.png" class="img-fluid" alt="">
 
 
 Because the WAV file I have contains two channels I am going to modify the audio channel config and also the encoding. 
@@ -126,7 +126,7 @@ One of the easiest ways to host the audio files is to upload them go you Google 
  * Readable by a user account, if using 3-legged OAuth for user account authorization.
 
 
-<img src="0f752dd2-687c-4509-8cab-dbfbc1a1c6da.png" class="img-fluid" alt="">
+<img src="/static/0f752dd2-687c-4509-8cab-dbfbc1a1c6da.png" class="img-fluid" alt="">
 
 
 <h5 class="step">9. Convert The File</h5>
@@ -136,7 +136,7 @@ Now we can convert our file from the cloud
 python transcribe_async.py gs://evilsaint/audio-output.wav
 ```
 
-<img src="e126cd77-7708-40ab-b407-e67de97ee5a1.png" class="img-fluid" alt="">
+<img src="/static/e126cd77-7708-40ab-b407-e67de97ee5a1.png" class="img-fluid" alt="">
 
 Or we can convert the file locally. 
 ```
@@ -261,4 +261,4 @@ curl -s -H "Content-Type: application/json"     -H "Authorization: Bearer "$(gcl
 ```
 
 
-<img src="9fc6cb8c-f6f5-4041-b83b-32b8562179d3.png" class="img-fluid" alt="">
+<img src="/static/9fc6cb8c-f6f5-4041-b83b-32b8562179d3.png" class="img-fluid" alt="">

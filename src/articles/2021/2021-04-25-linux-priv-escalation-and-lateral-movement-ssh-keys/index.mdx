@@ -12,7 +12,7 @@ posttype: article
 * For the examples in this article, I am going to boot up two Debian servers on Vultr.
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="02dbb41a-7a5c-450a-a3a2-b008eb0a6e7f.png" class="img-fluid" alt="">
+  <img src="/static/02dbb41a-7a5c-450a-a3a2-b008eb0a6e7f.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ ssh-keygen -t RSA -b 4096
 > The `-t` specifies the type and the `-b` the number of bits of entropy. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="2f088f7e-c9cf-4302-9d0e-4ebec9b3ac1b.png" class="img-fluid" alt="">
+  <img src="/static/2f088f7e-c9cf-4302-9d0e-4ebec9b3ac1b.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -155,7 +155,7 @@ If it is not clear to anyone reading this! the lines starting with the `#` have 
 Let us have a look at the keys we just generated 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="f3a65f26-d0a9-4688-99cd-5823f09a3b93.png" class="img-fluid" alt="">
+  <img src="/static/f3a65f26-d0a9-4688-99cd-5823f09a3b93.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -170,7 +170,7 @@ Now for the next part of this article we are going to want the exact same key pa
 First though let us see one more use of the `ssh-keygen` command. Remember that SHA1 fingerprint from earlier. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="999b1e82-eb1a-4107-9056-4a7add0c7326.png" class="img-fluid" alt="">
+  <img src="/static/999b1e82-eb1a-4107-9056-4a7add0c7326.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -191,7 +191,7 @@ openssl pkey -in /path/to/publickey -pubin -pubout -outform DER | openssl md5 -
 First I want to clarify some common mistakes. I know of other consultants who have thought they could use the following command to add the keys to another server. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="f16d3f8a-372b-49b3-8476-7ffd8458346f.png" class="img-fluid" alt="">
+  <img src="/static/f16d3f8a-372b-49b3-8476-7ffd8458346f.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -204,14 +204,14 @@ Let us have a look what is going on.
 > Please note I have already SSH to the box so no fingerprint for me to accept in this screenshot. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="a2d5285c-008f-4c1e-83a0-adc00aead2d3.png" class="img-fluid" alt="">
+  <img src="/static/a2d5285c-008f-4c1e-83a0-adc00aead2d3.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
 Now let us examine the `.ssh` folder
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="6ead762c-7d59-4ac3-a5b3-25d423962665.png" class="img-fluid" alt="">
+  <img src="/static/6ead762c-7d59-4ac3-a5b3-25d423962665.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -227,7 +227,7 @@ So know we have seen that the function of `ssh-copy-id` and how it does it job t
 The admin has a new machine deployed on his network. For the sake of simplicity, we have called it "demo3". 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="a18fe094-7160-40da-9e2c-993576244135.png" class="img-fluid" alt="">
+  <img src="/static/a18fe094-7160-40da-9e2c-993576244135.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -250,7 +250,7 @@ ssh root@95.179.138.81 'ls -Rl ~/'
 ```
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="a8a4d6bd-3365-468d-b8d0-1178fd662187.png" class="img-fluid" alt="">
+  <img src="/static/a8a4d6bd-3365-468d-b8d0-1178fd662187.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -259,7 +259,7 @@ As we can see, the root folder is pretty empty and so out command would result i
 Lets make the folder using the `-p` that creates any directories needed along the way. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="2d66bf01-f47e-4ac8-9552-67f513418529.png" class="img-fluid" alt="">
+  <img src="/static/2d66bf01-f47e-4ac8-9552-67f513418529.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -267,7 +267,7 @@ Now lets copy the public key across.
 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="be001666-6d2a-43bf-b561-046d20dc6e66.png" class="img-fluid" alt="">
+  <img src="/static/be001666-6d2a-43bf-b561-046d20dc6e66.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -278,7 +278,7 @@ It should be noted that "demo3" could still connect back to "demo1" with a passw
 Password authentication defaults to "yes", don't want to lock yourself out of a box by accident now do we. Note, even though the field is not set and commented out it shows us the default behavior. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="9c72444d-3604-49fd-ab40-f57556edcce4.png" class="img-fluid" alt="">
+  <img src="/static/9c72444d-3604-49fd-ab40-f57556edcce4.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -290,7 +290,7 @@ scp root@demo1:/root/.ssh/*
 I will get asked for my password but I will have my precious keys. However I STILL wont be able to login. The more observant of you by this point should be screaming your authorized_key file is missing. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="9fe2c9c7-8921-47df-8464-4278e5a89ecc.png" class="img-fluid" alt="">
+  <img src="/static/9fe2c9c7-8921-47df-8464-4278e5a89ecc.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -303,7 +303,7 @@ nano /etc/ssh/sshd_config
 ```
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="05b0645f-745f-4bd9-8cd8-742a7c0ad99d.png" class="img-fluid" alt="">
+  <img src="/static/05b0645f-745f-4bd9-8cd8-742a7c0ad99d.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -311,7 +311,7 @@ Let us uncomment that line and change it to no. Now Demo2 and Demo3 could not ss
 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="943e88e6-819d-4652-917b-76f171792883.png" class="img-fluid" alt="">
+  <img src="/static/943e88e6-819d-4652-917b-76f171792883.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -321,7 +321,7 @@ systemctl restart sshd
 ```
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="2f040ccb-60c0-4cf6-8790-af306cac9a7b.png" class="img-fluid" alt="">
+  <img src="/static/2f040ccb-60c0-4cf6-8790-af306cac9a7b.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -333,21 +333,21 @@ No prompt for a password and a message saying permission denied, something we ha
 When we press "yes" to accept the fingerprints of servers that we login to their corresponding entries get added to `known_hosts`. If a server fingerprint changes for any one of a number of reasons and it no longer matches what is in the known host we get a warning next time we try and connect to that server. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="fcfbb795-e111-4cb9-b473-2f2bb019eee4.png" class="img-fluid" alt="">
+  <img src="/static/fcfbb795-e111-4cb9-b473-2f2bb019eee4.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
 Lets force one now 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="4d5566f9-622a-4f29-b196-829a93e9cc3e.png" class="img-fluid" alt="">
+  <img src="/static/4d5566f9-622a-4f29-b196-829a93e9cc3e.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
 so despite connecting to that machine multiple times before we know have to once again accept the warning..... 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="d00b4621-de90-4a96-b46f-a37ba02fb13c.png" class="img-fluid" alt="">
+  <img src="/static/d00b4621-de90-4a96-b46f-a37ba02fb13c.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -358,7 +358,7 @@ When administering a lot of servers from your jump box, pressing yes all the tim
 So lets have a look at this useful tool. I will admit in out three machine setup it is overkill but it does let us look at the options a bit easier. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="243b3a86-cedc-48cc-ab8a-69a4423f7f1d.png" class="img-fluid" alt="">
+  <img src="/static/243b3a86-cedc-48cc-ab8a-69a4423f7f1d.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -373,14 +373,14 @@ If you have more than the few machines that I have here then you can supply them
 Lets create out known host file and check it out. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="7db3a1b7-9276-4a9e-8463-b824f30514b3.png" class="img-fluid" alt="">
+  <img src="/static/7db3a1b7-9276-4a9e-8463-b824f30514b3.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
 so let us run out command and see if we can login with no warning. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="b0417e4f-4dea-4e36-9391-709dbe3c562d.png" class="img-fluid" alt="">
+  <img src="/static/b0417e4f-4dea-4e36-9391-709dbe3c562d.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -391,7 +391,7 @@ Now before I finish part one of this article; I do appreciate you staying with m
 The local SSH Config can allow us to do some very complex things. We will only cover some of the really useful features here
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="bd5c27cf-637c-41d5-b31c-09f91b7537be.png" class="img-fluid" alt="">
+  <img src="/static/bd5c27cf-637c-41d5-b31c-09f91b7537be.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -410,7 +410,7 @@ Host demo3
 Now with just `ssh demo2` it replaces `ssh root@78.141.216.246`
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="de62bb13-f3c3-4dcb-ab34-8a5935e1c437.png" class="img-fluid" alt="">
+  <img src="/static/de62bb13-f3c3-4dcb-ab34-8a5935e1c437.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
@@ -423,14 +423,14 @@ In the second part of this article, we will expand on part one and go deeper int
 In the screenshot below the admin has backup his private key to a folder with the wrong permissions. Debbie has come along and found this key and has SSH into the host she is on.  Debbie is now the `root` user and has a stable shell.
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="8085e373-485d-4bb1-92b9-af14ef43901d.png" class="img-fluid" alt="">
+  <img src="/static/8085e373-485d-4bb1-92b9-af14ef43901d.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
 This trick was a little contrived but comes up frequently in capture the flag events. 
 
 <figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
-  <img src="7fe3301b-18a6-425a-9f7d-6a66770607df.png" class="img-fluid" alt="">
+  <img src="/static/7fe3301b-18a6-425a-9f7d-6a66770607df.png" class="img-fluid" alt="">
   <figcaption class="figure-caption text-center fw-normal text-dark">System Preferences.</figcaption>
 </figure>
 
