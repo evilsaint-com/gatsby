@@ -77,5 +77,13 @@ module.exports = {
     },
     __key: "ctfs"
   },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": `tutorials`,
+      "path": `${__dirname}/src/tutorials/`,
+    },
+    __key: "tutorials"
+  },
 ]
 };
