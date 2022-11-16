@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 import  Layout from "../components/layout";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import rehypeRaw from 'rehype-raw'
+import Comments from "../components/comments";
 
-function blogPost({ pageContext }) {
+function BlogPost({ pageContext }) {
    
   const { post } = pageContext
+  console.log(post)
   const prev = pageContext.prev 
   ? {
     url : `${pageContext.prev.fields.slug}`,
@@ -21,12 +25,17 @@ function blogPost({ pageContext }) {
 
    <Layout>
       <div className="card" key={post.fields.slug}>
-         <Link className="card-link" to={`.${post.fields.slug}`}>              
+         <Link className="card-link">              
          <h2 className="card-title">{post.frontmatter.title}</h2>
          </Link>
-         <p className="card-date">{post.frontmatter.date}</p>
+         <span className="card-date">{post.frontmatter.date}</span>
+         <span className="card-date">
+            <img src="/static/reading.png"
+                 style={{width: 30}}/>
+            {Math.ceil(post.body.split(" ").length / 150)} minutes
+         </span>
          <p className="card-description">{post.description}</p>
-
+         <ReactMarkdown children={post.body} rehypePlugins={[rehypeRaw]} />
          <nav>
          {next && 
          <Link to={`..${next.url}`} className="previous">
@@ -40,9 +49,10 @@ function blogPost({ pageContext }) {
          }
          </nav>
       </div>
+      <Comments issueTerm={post.fields.slug} />
    </Layout>
   )
 }
 
 
-export default blogPost
+export default BlogPost

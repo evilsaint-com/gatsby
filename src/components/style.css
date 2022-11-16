@@ -307,3 +307,35 @@ main div.card a.next {
 }
 
 /* END OF CONTENT CARD */
+
+.tags {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: #3e424d;
+    border-radius: 34px;
+    border: 1px solid #3e424d !important;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin: 3px;
+    padding: 8px 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.searchTerm {
+    width: 150%;
+    border: 3px solid gray;
+    
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+  }
+  
+  .searchTerm:focus{
+    color: black;
+  }

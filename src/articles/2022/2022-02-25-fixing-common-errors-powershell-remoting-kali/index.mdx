@@ -5,6 +5,7 @@ description: "In this article, I will briefly explain how to fix common issues w
 coverimage: Fixing_Common_Errors_PowerShell_Remoting_From_Kali.jpg
 tags: error-message, kali-linux, powershell
 published: true
+posttype: article
 ---
 
 Assuming you have powershell installed on Kali. 
@@ -39,8 +40,8 @@ PS /home/consultant> Enter-PSSession -ComputerName 192.168.1.235 -Credential $cr
 Enter-PSSession: This parameter set requires WSMan, and no supported WSMan client library was found. WSMan is either not installed or unavailable for this system.
 PS /home/consultant> 
 ```
+<img src="/static/86717c1c-326e-405e-a56f-4bcb1d38a049.png">
 
-![](86717c1c-326e-405e-a56f-4bcb1d38a049.png)
 
 The problem here is that the library is looking for packages that do not exist. 
 
@@ -63,8 +64,8 @@ ldd /opt/microsoft/powershell/7/libmi.so
 
 ```
 
+<img src="/static/adfdb756-450d-4869-a4d9-f6862bb0ba16.png">
 
-![](adfdb756-450d-4869-a4d9-f6862bb0ba16.png)
 
 In that directory, we need to add our symlinks:
 
@@ -74,8 +75,8 @@ cd /usr/lib/x86_64-linux-gnu
 sudo ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 libssl.so.1.0.0
 sudo ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.2 libcrypto.so.1.0.0
 ```
+<img src="/static/0743039e-e8ad-49d5-9d64-91588530b5f6.png">
 
-![](0743039e-e8ad-49d5-9d64-91588530b5f6.png)
 
 Now fixed!
 
@@ -113,8 +114,8 @@ From trying to type in a command such as
 PS /home/consultant> Enter-PSSession -ComputerName 192.168.1.235 -Credential $cred -Authentication Negotiate
 Enter-PSSession: Connecting to remote server 192.168.1.235 failed with the following error message : acquiring creds with username only failed An invalid name was supplied SPNEGO cannot find mechanisms to negotiate For more information, see the about_Remote_Troubleshooting Help topic.
 ```
+<img src="/static/7a048cd7-7167-4242-9c30-710c29d5b01b.png">
 
-![](7a048cd7-7167-4242-9c30-710c29d5b01b.png)
 
 This is because you need the following package installed on your kali Linux
 ```

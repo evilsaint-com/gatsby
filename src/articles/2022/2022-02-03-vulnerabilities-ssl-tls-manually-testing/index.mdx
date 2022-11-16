@@ -5,6 +5,7 @@ description: "As OpenSSL has improved, it has become more challenging to use one
 coverimage: Vulnerabilities_in_SSL__TLS__Manually_Testing.jpg
 tags: ssl, tls
 published: true
+posttype: article
 ---
 # OpenSSL For Testing
 
@@ -44,7 +45,8 @@ OpenSSL>
 
 We can see that OpenSSL 1.0.2g was released 1 March 2016, and version 1.1.1l was released 24 August 2021. Using the `openssl ciphers` syntax, we see more than just a version number,date and release separating these binaries.
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="6b0fdc3f-f387-44ca-9ddc-08cacb6cc151.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Number of Ciphers Supported Between Versions  1.1.1l and 1.0.2g</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12">
+    <img src="/static/6b0fdc3f-f387-44ca-9ddc-08cacb6cc151.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Number of Ciphers Supported Between Versions  1.1.1l and 1.0.2g</figcaption></figure>
 
 ## Connecting
 
@@ -54,7 +56,7 @@ OpenSSL provides different features and tools for SSL/TLS related operations. We
 openssl list-standard-commands
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="b644efe1-38f3-49b1-a45c-eb4b57693e5b.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Cropped Image of OpenSSL Binary Listing Standard Commands</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/b644efe1-38f3-49b1-a45c-eb4b57693e5b.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Cropped Image of OpenSSL Binary Listing Standard Commands</figcaption></figure>
 
 
 As can be seen, the OpenSSL binary provides many different features and tools for operations related to working with the TLS and SSL protocol. One of these tools, the s_client tool, connects, checks, and lists HTTPS and TLS/SSL-related information. We can assess services using SSL or TLS encryption for our customers using this tool. But first, let us look at its basic usage.
@@ -142,13 +144,13 @@ Let us compare the default system binary to our newly compiled one.
 testssl --openssl=/opt/openssl-1.0.2g/bin/openssl https://evilsaint.com
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="2a69cc1d-4400-4ff3-8875-0da4e92e1158.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Support for ~142 Ciphers </figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/2a69cc1d-4400-4ff3-8875-0da4e92e1158.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Support for ~142 Ciphers </figcaption></figure>
 
 ```
 testssl https://evilsaint.com
 ```
 
-<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="10d48df7-e237-4dcc-8fa6-7ec25875b8c9.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Support for ~81  Ciphers</figcaption></figure>
+<figure class="figure text-center col-xs-12 col-sm-12 col-lg-12"><img src="/static/10d48df7-e237-4dcc-8fa6-7ec25875b8c9.png" class="figure-img img-fluid border border-1 border-dark" alt=" "><figcaption class="figure-caption text-center fw-normal">Support for ~81  Ciphers</figcaption></figure>
 
 **SSLScan**
 If you complete the following on a terminal you will likely find that SSL Scan has been compiled to use the local system binary and there doesn't appear to be an option for sepcifying the openssl binary. 
