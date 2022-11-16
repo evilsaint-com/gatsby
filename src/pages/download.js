@@ -18,7 +18,7 @@ const Download = () => {
                             <div > 
                                 <img style={{maxWidth: 750, marginBottom: 10}}
                                 src={`/static/wp${num}.jpg`} />
-                                <a href={`/static/wp${num}.jpg`} download target="_blank">
+                                <a href={`/static/wp${num}.jpg`} download target="_blank" rel="noreferrer">
                                     <img style={{width: 50}} 
                                     src="/static/download_icon.png"/>    
                                 </a>
@@ -38,7 +38,7 @@ const Download = () => {
                             <div > 
                                 <img style={{maxWidth: 750, marginBottom: 10}}
                                 src={`/static/ch${num}.jpg`} />
-                                <a href={`/static/ch${num}.jpg`} download target="_blank">
+                                <a href={`/static/ch${num}.jpg`} download target="_blank" rel="noreferrer">
                                     <img style={{width: 50}} 
                                     src="/static/download_icon.png"/>    
                                 </a>
