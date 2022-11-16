@@ -13,6 +13,7 @@ exports.components = {
   "component---src-pages-contact-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/contact.js")),
   "component---src-pages-courses-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/courses.js")),
   "component---src-pages-ctfs-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/ctfs.js")),
+  "component---src-pages-download-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/download.js")),
   "component---src-pages-index-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/index.js")),
   "component---src-pages-portfolio-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/portfolio.js")),
   "component---src-pages-tools-js": preferDefault(require("/home/berkay/Desktop/asd/src/pages/tools.js")),

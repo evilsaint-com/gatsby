@@ -21,7 +21,7 @@ const Comments = ({ issueTerm }) => {
   return (
     <>
       <div id={commentsUUID} className="post-comments relative">
-        <div className="utterances-frame"></div>
+        <div></div>
       </div>
     </>
   )

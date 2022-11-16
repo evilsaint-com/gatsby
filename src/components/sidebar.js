@@ -18,6 +18,7 @@ const Sidebar = () => {
                     <li><a href="/articles" className="portfolio-link">Articles</a></li>
                     <li><a href="/tutorials" className="portfolio-link">Tutorials</a></li>
                     <li><a href="/ctfs" className="portfolio-link">CTFs</a></li>
+                    <li><a href="/download" className="portfolio-link">Download</a></li>
                     <li><a href="/books" className="blog-link">Books</a></li>
                     <li><a href="/contact" className="contact-link">Contact Me</a></li>
                     <li><a href="/courses" className="blog-link">Courses</a></li>

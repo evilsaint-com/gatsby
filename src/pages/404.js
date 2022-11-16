@@ -1,20 +1,25 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import SEO from "../components/seo";
-import Layout from "../components/layout";
+import background from "../../public/static/404.jpg"
 
 const FourOhFourPage = ({data}) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const siteDescription = data.site.siteMetadata.description;
-  
+  const styles = {
+    container: {
+        backgroundImage: `url(${background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh'
+    }
+};
   return (
-    <Layout>
-      <SEO title={siteTitle} description={siteDescription} />
-      <header>
-        <h1>Hmmmmmm</h1>
-        <p>You screwed something up there didn't you!!! ;-)</p>
-      </header>
-    </Layout>
+    
+  <div style={styles.container}>
+    
+  </div>
   ); 
 
 }

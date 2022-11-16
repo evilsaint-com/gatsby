@@ -28,7 +28,12 @@ function BlogPost({ pageContext }) {
          <Link className="card-link">              
          <h2 className="card-title">{post.frontmatter.title}</h2>
          </Link>
-         <p className="card-date">{post.frontmatter.date}</p>
+         <span className="card-date">{post.frontmatter.date}</span>
+         <span className="card-date">
+            <img src="/static/reading.png"
+                 style={{width: 30}}/>
+            {Math.ceil(post.body.split(" ").length / 150)} minutes
+         </span>
          <p className="card-description">{post.description}</p>
          <ReactMarkdown children={post.body} rehypePlugins={[rehypeRaw]} />
          <nav>
