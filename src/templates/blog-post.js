@@ -3,11 +3,12 @@ import { Link } from "gatsby";
 import  Layout from "../components/layout";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import rehypeRaw from 'rehype-raw'
+import Comments from "../components/comments";
 
 function BlogPost({ pageContext }) {
    
   const { post } = pageContext
-  
+  console.log(post)
   const prev = pageContext.prev 
   ? {
     url : `${pageContext.prev.fields.slug}`,
@@ -43,6 +44,7 @@ function BlogPost({ pageContext }) {
          }
          </nav>
       </div>
+      <Comments issueTerm={post.fields.slug} />
    </Layout>
   )
 }
